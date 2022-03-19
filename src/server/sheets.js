@@ -1,6 +1,12 @@
-const getSheets = () => SpreadsheetApp.getActive().getSheets();
+const ssId = "1XQN2QB4Sww9jCEUfSwZOKFBs-yExMl6QAGOKzErY078";
 
-const getActiveSheetName = () => SpreadsheetApp.getActive().getSheetName();
+export const doGet = () => {
+  const html = HtmlService.createTemplateFromFile('dialog-demo-bootstrap.html');
+  return html.evaluate().addMetaTag('viewport', 'width=device-width, initial-scale=1').setTitle('React App');
+}
+const getSheets = () => SpreadsheetApp.openById(ssId).getSheets();
+
+const getActiveSheetName = () => SpreadsheetApp.openById(ssId).getActiveSheet().getSheetName();
 
 export const getSheetsData = () => {
   const activeSheetName = getActiveSheetName();
@@ -15,18 +21,18 @@ export const getSheetsData = () => {
 };
 
 export const addSheet = sheetTitle => {
-  SpreadsheetApp.getActive().insertSheet(sheetTitle);
+  SpreadsheetApp.openById(ssId).insertSheet(sheetTitle);
   return getSheetsData();
 };
 
 export const deleteSheet = sheetIndex => {
   const sheets = getSheets();
-  SpreadsheetApp.getActive().deleteSheet(sheets[sheetIndex]);
+  SpreadsheetApp.openById(ssId).deleteSheet(sheets[sheetIndex]);
   return getSheetsData();
 };
 
 export const setActiveSheet = sheetName => {
-  SpreadsheetApp.getActive()
+  SpreadsheetApp.openById(ssId)
     .getSheetByName(sheetName)
     .activate();
   return getSheetsData();

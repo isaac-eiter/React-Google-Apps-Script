@@ -9,7 +9,7 @@ creds.json
 *.pem
 certs/
 
-# build
+#dist
 dist/
 
 # mac
