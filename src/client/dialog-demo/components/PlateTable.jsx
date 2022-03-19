@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
+import Button from './Button'
 
 
-const Table = ({ data, cols, onChange }) => {
+const PlateTable = ({ data, cols, deletePlate }) => {
     return (
         <div>
             <table>
                 <thead>
                     <tr>
+                        <td></td>
                         {cols.map((val) => (
                             <th>{val}</th>
                         ))}
@@ -15,8 +17,11 @@ const Table = ({ data, cols, onChange }) => {
                 <tbody>
                     {data.map((plate) => (
                         <tr>
+                            <td>
+                                <Button text="X" onClick={deletePlate} />
+                            </td>
                             {cols.map((val) => (
-                                <td>
+                                <td key={`${plate.id}${val}`}>
                                     <input type={"text"} defaultValue={plate[val]} />
                                 </td>
                             ))}
@@ -27,8 +32,8 @@ const Table = ({ data, cols, onChange }) => {
         </div >
     )
 }
-Table.defaultProps = {
+PlateTable.defaultProps = {
     cols: ["id", "barcode", "type", "location", "position"]
 }
 
-export default Table
+export default PlateTable

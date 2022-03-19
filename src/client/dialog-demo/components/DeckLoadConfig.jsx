@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Button from './Button'
-import Table from './Table'
+import PlateTable from './PlateTable'
 
 const addRow = () => {
-    let i = 0;
+    return plates.push({})
 }
 const deleteRow = () => {
 
@@ -41,7 +41,7 @@ const DeckLoadConfig = () => {
             <h2>Deck Configuration:</h2>
             <Button text="Add Plate" onClick={addRow} />
             <Button text="Remove Plate" onClick={deleteRow} />
-            <Table data={plates} onChange={plateChange} />
+            <PlateTable data={plates} />
         </div>
     )
 }
