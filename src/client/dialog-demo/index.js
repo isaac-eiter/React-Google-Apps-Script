@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SheetEditor from './components/SheetEditor';
+import ScriptBuilder from './components/ScriptBuilder';
 
 import './styles.css';
 
-ReactDOM.render(<SheetEditor />, document.getElementById('index'));
+ReactDOM.render(<ScriptBuilder />, document.getElementById('index'));
