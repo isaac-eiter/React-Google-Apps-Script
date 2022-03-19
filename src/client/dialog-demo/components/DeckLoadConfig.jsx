@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import Table from './Table'
 
 const plates = [
     {
@@ -26,7 +27,7 @@ const plates = [
 ]
 
 const addRow = () => {
-
+    let i = 0;
 }
 const deleteRow = () => {
 
@@ -36,9 +37,9 @@ const DeckLoadConfig = () => {
     return (
         <div>
             <h2>Deck Configuration:</h2>
-            <Button text="Add Plate" onClick="addRow" />
-            <Button text="Remove Plate" onClick="deleteRow" />
-            <Table data={plates} />
+            <Button text="Add Plate" onClick={addRow} />
+            <Button text="Remove Plate" onClick={deleteRow} />
+            <Table data={plates} title="Deck Config" />
         </div>
     )
 }

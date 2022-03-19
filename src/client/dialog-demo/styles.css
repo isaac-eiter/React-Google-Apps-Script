@@ -83,7 +83,9 @@ button.basicButton {
   color: inherit;
   background: none;
 }
-
+table {
+  border: 1px solid;
+}
 span.sheetNameText {
   cursor: pointer;
   font-size: 14px;
