@@ -1,24 +1,30 @@
 import React, { Component } from 'react'
 
 
-const Table = ({ title, data, cols }) => {
+const Table = ({ data, cols, onChange }) => {
     return (
         <div>
-            <table>{title}
-                <tr>
-                    {cols.map((val) => (
-                        <th>{val}</th>
-                    ))}
-                </tr>
-                {data.map((plate) => (
+            <table>
+                <thead>
                     <tr>
                         {cols.map((val) => (
-                            <td>{plate[val]}</td>
+                            <th>{val}</th>
                         ))}
                     </tr>
-                ))}
+                </thead>
+                <tbody>
+                    {data.map((plate) => (
+                        <tr>
+                            {cols.map((val) => (
+                                <td>
+                                    <input type={"text"} defaultValue={plate[val]} />
+                                </td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
             </table>
-        </div>
+        </div >
     )
 }
 Table.defaultProps = {
