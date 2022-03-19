@@ -1,5 +1,5 @@
 input {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Arial';
   width: 150px;
   height: 28px;
   border: 1px solid #6b6b6b;
@@ -12,7 +12,7 @@ input:focus {
 
 button {
   cursor: pointer;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 button.submit {
@@ -65,7 +65,7 @@ button.delete:focus {
 
 .formBlock {
   display: -webkit-box;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   padding-bottom: 30px;
 }
@@ -87,7 +87,7 @@ button.basicButton {
 span.sheetNameText {
   cursor: pointer;
   font-size: 14px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Arial', sans-serif;
   border-bottom-color: rgba(51, 130, 54, 0);
   border-bottom-width: 3px solid none;
   border-bottom-style: solid;

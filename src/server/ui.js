@@ -8,11 +8,12 @@ export const onOpen = () => {
   menu.addToUi();
 };
 
-export const openDialog = () => {
+export const doGet = () => {
   const html = HtmlService.createHtmlOutputFromFile('dialog-demo')
     .setWidth(600)
-    .setHeight(600);
-  SpreadsheetApp.getUi().showModalDialog(html, 'Sheet Editor');
+    .setHeight(600)
+    .setTitle("React App");
+  return html
 };
 
 export const openDialogBootstrap = () => {

@@ -3,9 +3,10 @@ import {
   openDialog,
   openDialogBootstrap,
   openAboutSidebar,
+  doGet,
 } from './ui';
 
-import { doGet, getSheetsData, addSheet, deleteSheet, setActiveSheet } from './sheets';
+import { getSheetsData, addSheet, deleteSheet, setActiveSheet } from './sheets';
 
 // Public functions must be exported as named exports
 export {
