@@ -1,11 +1,12 @@
 import React from 'react'
 
-const Button = ({ text, onClick, }) => {
+const Button = ({ text, onClick, id }) => {
     return (
         <div>
             <button
                 className='btn'
                 onClick={onClick}
+                id={id}
             >
                 {text}
             </button>

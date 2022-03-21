@@ -18,7 +18,7 @@ const PlateTable = ({ data, cols, deletePlate }) => {
                     {data.map((plate) => (
                         <tr>
                             <td>
-                                <Button text="X" onClick={deletePlate} />
+                                <Button text="X" id={plate.row} onClick={deletePlate} />
                             </td>
                             {cols.map((val) => (
                                 <td key={`${plate.id}${val}`}>

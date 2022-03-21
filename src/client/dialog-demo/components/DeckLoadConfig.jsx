@@ -3,10 +3,10 @@ import Button from './Button'
 import PlateTable from './PlateTable'
 
 const addRow = () => {
-    return plates.push({})
 }
-const deleteRow = () => {
-
+const deleteRow = (e, plates) => {
+    console.log(e.target.id)
+    plates.filter(val => val.row != e.target.id)
 }
 const plateChange = (e) => {
     console.log(e.id)
@@ -15,6 +15,7 @@ const plateChange = (e) => {
 const DeckLoadConfig = () => {
     const [plates, setPlates] = useState([
         {
+            row: "1",
             id: "lp_plate_1",
             barcode: "rand_string",
             type: "PCR_Plate",
@@ -22,6 +23,7 @@ const DeckLoadConfig = () => {
             position: 1
         },
         {
+            row: "2",
             id: "lp_plate_2",
             barcode: "rand_string",
             type: "PCR_Plate",
@@ -29,6 +31,7 @@ const DeckLoadConfig = () => {
             position: 2
         },
         {
+            row: "3",
             id: "lp_plate_3",
             barcode: "rand_string",
             type: "PCR_Plate",
@@ -40,8 +43,7 @@ const DeckLoadConfig = () => {
         <div>
             <h2>Deck Configuration:</h2>
             <Button text="Add Plate" onClick={addRow} />
-            <Button text="Remove Plate" onClick={deleteRow} />
-            <PlateTable data={plates} />
+            <PlateTable data={plates} deletePlate={deleteRow} />
         </div>
     )
 }
